@@ -15,10 +15,12 @@ class PostLoader
         $posts = [];
         $message = file_get_contents("messages.json");
         $data = json_decode($message);
-        foreach ($data as $post) {
-            $post = new Post($post[0], $post[1], $post[2], $post[3]);
-            array_push($posts, $post);
-        }
+        array_push($posts, $data);
+        //foreach ($data as $post) {
+        //            $post = new Post($data[0], $data[1], $data[2],$data[3]);
+        //            array_push($posts, $post);
+        //        }
+
         $this->posts=$posts;
     }
 //public function loadAllPosts()

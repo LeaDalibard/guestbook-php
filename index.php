@@ -22,6 +22,8 @@ if (!isset($_POST['content'])){
 }
 // Check validity -> make a post validator ? new class
 
+$posts=new PostLoader();
+
 $title =$_POST['title'];
 $user=$_POST['user'];
 $content=$_POST['content'];
@@ -31,16 +33,14 @@ $date=new DateTimeImmutable();
 //array_push($post,$title,$user,$content,$date);
 
 $post = new Post ($title,$user,$content,$date);
-$posts=new PostLoader();
 $posts->addPost($post);
 
 var_dump($posts);
+
 //file_put_contents('messages.json',json_encode($post->export(),JSON_PRETTY_PRINT));
 //$message=file_get_contents("messages.json");
 //var_dump(json_decode($message));
-//echo json_encode($message);
-
-
+//$data = json_decode($message);
 
 
 

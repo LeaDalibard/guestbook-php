@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to my site!</h1>
+    <h1>Welcome to my site !</h1>
     <section>
         <h2>Recent articles</h2>
     </section>
@@ -22,8 +22,8 @@
             <p>Title : <input type="text" name="title"/></p>
             <!-- <p>Date : <input type="date" name="date"/></p> -->
             <p> Comment: <br>
-                <textarea name="comment" rows="5" cols="40"></textarea></p>
-            <p>Name: <input type="text" name="name"></p>
+                <textarea name="content" rows="5" cols="40"></textarea></p>
+            <p>Name: <input type="text" name="user"></p>
             <p><input type="submit" value="Submit"></p>
         </form>
     </section>

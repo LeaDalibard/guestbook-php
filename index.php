@@ -31,12 +31,14 @@ $date=new DateTimeImmutable();
 //array_push($post,$title,$user,$content,$date);
 
 $post = new Post ($title,$user,$content,$date);
-//$posts=new PostLoader();
-//$posts->addPost($post);
+$posts=new PostLoader();
+$posts->addPost($post);
 
-file_put_contents('messages.json',json_encode($post->export(),JSON_PRETTY_PRINT));
-$message=file_get_contents("messages.json");
-var_dump(json_decode($message));
+var_dump($posts);
+//file_put_contents('messages.json',json_encode($post->export(),JSON_PRETTY_PRINT));
+//$message=file_get_contents("messages.json");
+//var_dump(json_decode($message));
+//echo json_encode($message);
 
 
 

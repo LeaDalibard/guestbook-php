@@ -1,3 +1,10 @@
-test5[{}][{}][
-    {}
+[
+    "Test",
+    "public",
+    "Blablabla",
+    {
+        "date": "2020-10-15 13:38:23.582727",
+        "timezone_type": 3,
+        "timezone": "UTC"
+    }
 ]

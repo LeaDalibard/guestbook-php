@@ -12,26 +12,34 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to my site !</h1>
-    <section>
-        <h2>Recent articles</h2>
-        <div class="card-group">
 
-            <?php for($i=0;$i<NUMBER_ARTICLES;$i++): ?>
+    <header class="text-center py-5">
+        <h1 >Welcome to my site</h1>
+    </header>
+
+    <section>
+        <h2  class="pb-3">Recent articles</h2>
+
+        <?php for ($i = 0; $i < NUMBER_ARTICLES; $i++): ?>
+            <div class="card">
                 <div class="card-body">
                     <h3 class="card-title"><?php echo $reversePosts[$i]['title'] ?></h3>
-                    <h4 class="card-text"> Author : <?php echo $reversePosts[$i]['user'] ?> </h4>
+                    <h4 class="card-subtitle mb-2 text-muted"> Author
+                        : <?php echo $reversePosts[$i]['user'] ?> </h4>
                     <p class="card-text"><?php echo $reversePosts[$i]['content'] ?></p>
-                    <p class="card-text"><?php $reversePosts[$i]['date']->format('Y-m-d') ?></p>
                 </div>
-            <?php endfor; ?>
-        </div>
-        <!--<p> var_dump( $post['date']->format('Y-m-d'))</p> -->
+                <div class="card-footer">
+                    <?php echo $reversePosts[$i]['date']->format('Y-m-d'); ?>
+                </div>
+            </div>
+        <?php endfor; ?>
     </section>
-    <section>
-        <h2>Give your opinion : </h2>
+    <section class="py-5">
+        <h2 class="pb-3">Give your opinion : </h2>
 
-            <?php if(!empty ($alert)){echo'<div class="alert alert-danger" role="alert">'. $alert.'</div>';} ?>
+        <?php if (!empty ($alert)) {
+            echo '<div class="alert alert-danger" role="alert">' . $alert . '</div>';
+        } ?>
 
         <form method="post" action="index.php">
             <p>Title : <input type="text" name="title"/></p>

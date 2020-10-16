@@ -31,7 +31,7 @@ You can either use [json_encode()](https://php.net/json_encode) or [serialize()]
     
 - [X] Use at least 2 classes: PostLoader & Post
 - [X] The messages are sorted from new (top) to old (bottom).
-- [ ] Make sure the script can handle [site defacement attacks](https://en.wikipedia.org/wiki/Website_defacement): use [htmlspecialchars()](https://www.php.net/htmlspecialchars)
+- [X] Make sure the script can handle [site defacement attacks](https://en.wikipedia.org/wiki/Website_defacement): use [htmlspecialchars()](https://www.php.net/htmlspecialchars)
 - [X] Only show the latest 20 posts.
 
 ## Nice to have features

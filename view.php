@@ -24,7 +24,7 @@
             <p> Comment: <br>
                 <textarea name="content" rows="5" cols="40"></textarea></p>
             <p>Name: <input type="text" name="user"></p>
-            <p><input type="submit" value="Submit"></p>
+            <p><input type="submit" name="submit" value="Submit"></p>
         </form>
     </section>
 </div>

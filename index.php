@@ -23,21 +23,24 @@ if (!isset($_POST['content'])){
 
 // Check validity -> make a post validator ? new class
 
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
+        echo "Please fill all the fields";
+    }
+    else{
+        $title =$_POST['title'];
+        $user=$_POST['user'];
+        $content=$_POST['content'];
+        $date=new DateTimeImmutable();
 
+        $posts=new PostLoader();
+        $post = new Post ($title,$user,$content,$date);
 
-$title =$_POST['title'];
-$user=$_POST['user'];
-$content=$_POST['content'];
-$date=new DateTimeImmutable();
+        $posts->addPost($post);
 
-$posts=new PostLoader();
-
-$post = new Post ($title,$user,$content,$date);
-
-$posts->addPost($post);
-
-var_dump($posts);
-
+        var_dump($posts);
+    }
+}
 
 
 require 'view.php';

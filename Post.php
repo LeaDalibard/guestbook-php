@@ -45,8 +45,7 @@ class Post
 
 // ------> making an export function so I can see my private attribute when exporting then in json
 public function export():array{
-    $publicArray=[];
-    array_push( $publicArray,$this->getTitle(),$this->getUser(),$this->getContent(),$this->getDate());
+    $publicArray = array('title' => $this->getTitle(), 'user' => $this->getUser(), 'content' => $this->getContent(), 'date' => $this->getDate());
     return  $publicArray;
 }
 

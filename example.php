@@ -4,6 +4,9 @@ $users = ['John Doe', 'Joe Doe', 'John Smith', 'An Onymous'];
 $articles = ['Terror over london', 'Football: a useless hobby?', 'Economic crisis ahead, says expert', 'Fortis is Fortwas'];
 //end controller
 //start view
+
+
+
 ?>
 <!doctype html>
 <html lang="en">

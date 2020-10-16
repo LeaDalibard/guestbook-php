@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
        $alert= "Please fill all the fields";
     }
     else{
-        $title =$_POST['title'];
-        $user=$_POST['user'];
-        $content=$_POST['content'];
+        $title =htmlspecialchars($_POST['title']);
+        $user=htmlspecialchars($_POST['user']);
+        $content=htmlspecialchars($_POST['content']);
         $date=new DateTimeImmutable();
 
         $post = new Post ($title,$user,$content,$date);

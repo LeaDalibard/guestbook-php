@@ -15,15 +15,17 @@
     <h1>Welcome to my site !</h1>
     <section>
         <h2>Recent articles</h2>
-        <?php foreach ($publicPosts AS $post): ?>
-<h3><?php echo $post['title'] ?></h3>
-        <h4>Author : <?php echo $post['user'] ?> </h4>
-            <p><?php echo $post['content'] ?></p>
-            <p><?php echo $post['date']->format('Y-m-d') ?></p>
+        <div class="card-group">
 
-        <?php endforeach; ?>
-
-
+            <?php for($i=0;$i<NUMBER_ARTICLES;$i++): ?>
+                <div class="card-body">
+                    <h3 class="card-title"><?php echo $reversePosts[$i]['title'] ?></h3>
+                    <h4 class="card-text"> Author : <?php echo $reversePosts[$i]['user'] ?> </h4>
+                    <p class="card-text"><?php echo $reversePosts[$i]['content'] ?></p>
+                    <p class="card-text"><?php $reversePosts[$i]['date']->format('Y-m-d') ?></p>
+                </div>
+            <?php endfor; ?>
+        </div>
         <!--<p> var_dump( $post['date']->format('Y-m-d'))</p> -->
     </section>
     <section>

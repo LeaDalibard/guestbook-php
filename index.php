@@ -24,7 +24,7 @@ if (!isset($_POST['content'])){
 // Check validity -> make a post validator ? new class
 $posts=new PostLoader();
 $alert='';
-
+const NUMBER_ARTICLES=20;
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
        $alert= "Please fill all the fields";
@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 $publicPosts=$posts->exportPosts();
+$reversePosts=array_reverse($publicPosts);
 
 
 require 'view.php';

@@ -35,7 +35,7 @@ $post = new Post ($title,$user,$content,$date);
 var_dump($post);
 $posts->addPost($post);
 
-//var_dump($posts);
+var_dump($posts);
 
 //file_put_contents('messages.json',json_encode($post->export(),JSON_PRETTY_PRINT));
 //$message=file_get_contents("messages.json");

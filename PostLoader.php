@@ -13,34 +13,13 @@ class PostLoader
     public function __construct()
     {   $message = file_get_contents("messages.json");
         $data = json_decode($message, true); // TRUE SUPER IMPORTANT TO ACCESS OBJECT
-        var_dump($data);
-        var_dump($data[0]);
-        var_dump($data[0]['title']);
-        $dataLength=count($data);
         $arrayTest=[];
-        for($i=0;$i<$dataLength;$i++){
-                $post = new Post ($data[$i]['title'],$data[$i]['user'], $data[$i]['content'],new DateTimeImmutable());
-                array_push($arrayTest, $post);
-              }
-        // NEED TO FIX DATE FORMAT LATER
+        foreach ($data as $post){
+            $post = new Post ($post['title'],$post['user'],$post['content'],new DateTimeImmutable());
+            array_push($arrayTest, $post);
+        }
         $this->posts=$arrayTest;
-
-        //foreach ($data as $post){
-        //$post = new Post ($post['title'],$post['user'], $post['content'],$post['date']);
-        //    array_push($this->posts, $post);
-        //}
     }
-//public function loadAllPosts()
-//        //open a file
-//        //json_decode or unserialize it
-//        //loop over the data from the file
-//        // assign each entry to a Post Class
-//
-//        $data = json_encode('');
-//        foreach ($data as $post) {
-//            $this->posts[] = new Post($post['title']);
-//        }
-//    }
 
 
     public

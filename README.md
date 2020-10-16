@@ -39,8 +39,7 @@ You can either use [json_encode()](https://php.net/json_encode) or [serialize()]
 
 - [ ] When the user enters uses a "smily" like ":-)", ";-)", ":-(" replace it with an image of such a smily.
 
-- [ ]Have an input field where the user can enter how many message he wants to see displayed.
-
+- [X] Have an input field where the user can enter how many message he wants to see displayed.
 ### Tips & Advice
 - To keep a good overview of the code we recommend separating the view (html code) as much as possible from the PHP code, look at the example.php.
 If you want you can already look into [more advanced theory](https://nl.wikipedia.org/wiki/Model-view-controller-model) for this separation, but it is not required in this exercise.

@@ -32,7 +32,7 @@ else{
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if (isset($_POST["submit"])){
     if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
        $alert= "Please fill all the fields";
     }

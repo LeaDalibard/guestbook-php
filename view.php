@@ -15,6 +15,16 @@
     <h1>Welcome to my site !</h1>
     <section>
         <h2>Recent articles</h2>
+        <?php foreach ($publicPosts AS $post): ?>
+<h3><?php echo $post['title'] ?></h3>
+        <h4>Author : <?php echo $post['user'] ?> </h4>
+            <p><?php echo $post['content'] ?></p>
+            <p><?php echo $post['date']->format('Y-m-d') ?></p>
+
+        <?php endforeach; ?>
+
+
+        <!--<p> var_dump( $post['date']->format('Y-m-d'))</p> -->
     </section>
     <section>
         <h2>Give your opinion : </h2>

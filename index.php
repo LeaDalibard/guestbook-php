@@ -41,14 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 
+$publicPosts=$posts->exportPosts();
 
-//$test=$posts->getPosts();
-//$testexport=$test[0]->export();
-//var_dump($testexport);
-$test=$posts->exportPosts();
-//var_dump($test);
-foreach ($test as $post){
-    echo $post['title'];
-}
 
 require 'view.php';

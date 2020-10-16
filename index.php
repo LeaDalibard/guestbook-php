@@ -25,6 +25,13 @@ if (!isset($_POST['content'])){
 $posts=new PostLoader();
 $alert='';
 const NUMBER_ARTICLES=20;
+
+if(isset($_POST["articles_number"])){$numberArticles=intval($_POST["articles_number"]);}
+else{
+    $numberArticles=NUMBER_ARTICLES;
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
        $alert= "Please fill all the fields";

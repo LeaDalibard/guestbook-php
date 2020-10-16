@@ -19,8 +19,12 @@
 
     <section>
         <h2  class="pb-3">Recent articles</h2>
+        <form method="post" action="index.php">
+            <p>Number of article you want to be display : <input type="text" name="articles_number"></p>
+            <p><input type="submit" class="btn btn-primary" name="articles" value="Submit"></p>
+        </form>
 
-        <?php for ($i = 0; $i < NUMBER_ARTICLES; $i++): ?>
+        <?php for ($i = 0; $i <$numberArticles; $i++): ?>
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title"><?php echo $reversePosts[$i]['title'] ?></h3>
@@ -47,7 +51,7 @@
             <p> Comment: <br>
                 <textarea name="content" rows="5" cols="40"></textarea></p>
             <p>Name: <input type="text" name="user"></p>
-            <p><input type="submit" name="submit" value="Submit"></p>
+            <p><input type="submit" class="btn btn-primary" name="submit" value="Submit"></p>
         </form>
     </section>
 </div>

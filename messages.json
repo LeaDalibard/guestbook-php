@@ -238,5 +238,15 @@
             "timezone_type": 3,
             "timezone": "UTC"
         }
+    },
+    {
+        "title": "Test with number articles",
+        "user": "Friday",
+        "content": "Test with number articles",
+        "date": {
+            "date": "2020-10-16 14:58:27.966455",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        }
     }
 ]

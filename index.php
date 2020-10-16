@@ -22,6 +22,7 @@ if (!isset($_POST['content'])){
 }
 
 // Check validity -> make a post validator ? new class
+$posts=new PostLoader();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
@@ -33,14 +34,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $content=$_POST['content'];
         $date=new DateTimeImmutable();
 
-        $posts=new PostLoader();
         $post = new Post ($title,$user,$content,$date);
 
         $posts->addPost($post);
 
-        var_dump($posts);
     }
 }
 
+
+//$test=$posts->getPosts();
+//$testexport=$test[0]->export();
+//var_dump($testexport);
+$test=$posts->exportPosts();
+//var_dump($test);
+foreach ($test as $post){
+    echo $post['title'];
+}
 
 require 'view.php';

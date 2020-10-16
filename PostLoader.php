@@ -22,6 +22,24 @@ class PostLoader
     }
 
 
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    public function exportPosts()
+    {
+        $publicPosts=$this->getPosts();
+        $publicPostsArray=[];
+        foreach ($publicPosts as $post){
+            array_push($publicPostsArray, $post->export());
+        }
+        return $publicPostsArray;
+        //$test=$posts->getPosts();
+        //$testexport=$test[0]->export();
+        //var_dump($testexport);
+    }
+
     public function addPost(Post $post)
     {
         $arrayMessage=[];

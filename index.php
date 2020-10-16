@@ -20,6 +20,7 @@ if (!isset($_POST['user'])){
 if (!isset($_POST['content'])){
     $_POST['content']="";
 }
+
 // Check validity -> make a post validator ? new class
 
 
@@ -32,18 +33,11 @@ $date=new DateTimeImmutable();
 $posts=new PostLoader();
 
 $post = new Post ($title,$user,$content,$date);
-var_dump($post);
+
 $posts->addPost($post);
 
 var_dump($posts);
 
-//file_put_contents('messages.json',json_encode($post->export(),JSON_PRETTY_PRINT));
-//$message=file_get_contents("messages.json");
-//var_dump(json_decode($message));
-//$data = json_decode($message);
 
-
-
-//json_encode($this->msgArray,JSON_PRETTY_PRINT);
 
 require 'view.php';

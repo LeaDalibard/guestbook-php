@@ -28,6 +28,9 @@
     </section>
     <section>
         <h2>Give your opinion : </h2>
+
+            <?php if(!empty ($alert)){echo'<div class="alert alert-danger" role="alert">'. $alert.'</div>';} ?>
+
         <form method="post" action="index.php">
             <p>Title : <input type="text" name="title"/></p>
             <!-- <p>Date : <input type="date" name="date"/></p> -->

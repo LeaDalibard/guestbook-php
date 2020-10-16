@@ -23,10 +23,11 @@ if (!isset($_POST['content'])){
 
 // Check validity -> make a post validator ? new class
 $posts=new PostLoader();
+$alert='';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["title"]) || empty($_POST["user"]) || empty($_POST["content"])){
-        echo "Please fill all the fields";
+       $alert= "Please fill all the fields";
     }
     else{
         $title =$_POST['title'];
